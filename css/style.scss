@@ -1,0 +1,225 @@
+/* public begin*/
+*{
+	margin:0;
+	padding:0;
+} 
+body{
+	font-size:16px;
+	font-family: "Arial","Microsoft YaHei",sans-serif;
+	background:url('../img/02.jpg');
+}
+ul{
+	list-style:none;
+}
+a{
+	text-decoration:none;
+	color:inherit;
+}
+/* public end*/
+@font-face{
+	font-family:'Lobster';
+	src:url("../fonts/Lobster-Regular.ttf");
+}
+
+/* viriable area begin */
+$navHeigth: 100px;
+
+/* viriable area end */
+
+/* topNav begin */
+.topNav{
+	height:$navHeigth;
+	box-shadow:0 0 4px #ccc;
+	font-family:'Lobster';
+	&>img{
+		width:1349px;
+		height: $navHeigth;
+		position: absolute;
+		top:0;
+		left:0;
+		z-index: -1;
+		opacity: .5;
+	} 
+	//background:url('../img/03.jpeg') no-repeat;
+	//background-size:cover;
+
+	.NavLeft{
+		width: 766px;
+		height: $navHeigth;
+		float: left;
+		.NavLeftContent{
+			margin-left: 130px;
+			position: relative;
+			height: 80px;
+			padding:10px 20px;
+			font-size: 20px;
+		}
+	}
+	.NavRight{
+		height: $navHeigth;
+		width: 570px;
+		float: left;
+		margin-left: 10px;
+		li{
+			
+			width:80px;
+			float: left;
+			line-height:80px;
+			border-left:1px dotted lightgray;
+			padding:8px 20px;
+			// margin-left: 20px;
+            //border-bottom: 2px solid lightgray;
+			transition:all 3s ease 0.1s;
+			text-align:center;
+			font-size: 20px;
+			background: rgba(255,255,255,0.1);
+			overflow: hidden;
+
+		}
+		li.current{
+				//border-bottom: 2px solid lightgreen;
+				//background: url('../img/05.jpeg');
+				box-shadow:0 0 20px 2px gray;
+				width:120px;
+			}
+		li:nth-child(3){
+			border-right: 1px solid lightgray;
+		}
+		li:hover{
+            width:120px;
+		}
+	}
+}
+@keyframes imgRotate{
+	form{
+		transform: rotate(0deg);
+	}
+	to{
+		transform: rotate(360deg);
+	}
+}
+.NavLeftContent img{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    top:10px;
+    left:-80px;
+    animation:imgRotate 10s linear 0.1s infinite;
+}
+.NavLeftContent p{
+	&:nth-of-type(1){
+		font-size: 25px;
+	}
+    &:nth-of-type(2){
+    	color: #262626;
+    	margin-top: 5px;
+    	margin-left: 250px;
+    }
+    &:nth-of-type(3){
+    	color:#262626;
+    	margin-left: 330px;
+    }
+}
+
+/* topNav end */
+
+/* wrap begin */
+.wrap{
+	width:1000px;
+	//height:500px;
+	background:rgba(255,255,255,0.1);
+	//border:1px solid gray;
+	margin:0 auto;
+}
+
+.articleBar{
+	height:30px;
+	text-align:center;
+	line-height:30px;
+	position:relative;
+	margin:30px 0;       
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	   -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+			box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    background: #D1D8D1;
+    &::before,&::after{
+	    content:"";
+		position:absolute; 
+		z-index:-5;
+		-webkit-box-shadow:0 0 10px rgba(0,0,0,0.8);
+		-moz-box-shadow:0 0 10px rgba(0,0,0,0.8);
+		box-shadow:0 0 10px rgba(0,0,0,0.8);
+		top:70%;
+		bottom:0;
+		left:10px;
+		right:10px;
+		-moz-border-radius:100px / 10px;
+		border-radius:100px / 10px;
+        }
+}
+.articleContainer{
+	ul{
+		overflow: hidden;
+	}
+	li{
+		width:300px;
+		height: 250px;
+		background: rgba(255,255,255,0.3);
+		margin: 15px 15px;
+		float: left;
+		transition:all 0.1s ease 0.1s;
+		box-shadow:1px 1px 2px gray;
+		&:hover{
+			box-shadow:2px 2px 15px 2px lightgreen;
+
+			h3{
+				transform: translateY(100px);
+			}
+			.author{
+				transform: translateY(-50px);
+			}
+		}
+		h3{
+			height: 50px;
+			line-height:50px;
+			background: rgba(255,255,255,0.7);
+			text-align: center;
+			transition: all 2s ease 0s;
+		}
+		.author{
+			height: 50px;
+			line-height:50px;
+			background: rgba(255,255,255,0.7);
+			text-align: center;
+			margin-top: 50%;
+			transition: all 2s ease 0s;
+		}
+	}
+	li:nth-child(1){
+		background: url('../img/liBg1.jpg');
+		overflow: hidden;
+	}
+	li:nth-child(2){
+		background: url('../img/liBg2.jpg');
+		overflow: hidden;
+	}
+	li:nth-child(3){
+		background: url('../img/liBg3.png');
+		overflow: hidden;
+	}
+	li:nth-child(4){
+		background: url('../img/liBg4.jpg');
+		overflow: hidden;
+	}
+	li:nth-child(5){
+		background: url('../img/liBg5.jpg');
+		overflow: hidden;
+	}
+	li:nth-child(6){
+		background: url('../img/liBg5.jpg');
+		overflow: hidden;
+	}
+}
+
+/* wrap end */
